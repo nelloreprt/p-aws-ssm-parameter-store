@@ -1,0 +1,42 @@
+1.1 To Create/store Parameters as a Secret---------------------------------------------------------------------------------
+
+step-1 create a Key(symmetric/Asymmetric) in KMS(aws_Key_Management_Service) with any_name, we want the key_id
+go with "Customer_managed_keys"
+# key_id is required to encrypt the parameter, so that amazon people cannot see it,
+# and also the secret will be visible to people of our company
+
+step-2 use below block (key_id with SecureString)
+
+resource "aws_ssm_parameter" "parameter" {
+  name  = "name"
+  type  = "SecureString"
+  value = "roboshop"
+  key_id = "asdfa546s54654asdf65"
+}
+
+1.2 To Create/store Parameters---------------------------------------------------------------------------------------------
+step-1 create a Key(symmetric/Asymmetric) in KMS(aws_Key_Management_Service) with any_name, we want the key_id
+# key_id is required to encrypt the parameter, so that amazon people cannot see it
+
+resource "aws_ssm_parameter" "parameter" {
+  name  = "name"
+  type  = "String"
+  value = "roboshop"
+  key_id = "asdfa546s54654asdf65"
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+2.1 To read the stored parameters from aws_ssm_parameter, using ANSIBLE
+syntax >> "{{ lookup('aws_ssm', '<parameter_name>', region='us-east-1' ) }}"
+
+eg:
+"{{ lookup('aws_ssm', 'dev.frontend.catalogue_url', region='us-east-1' ) }}"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+3.1 DNS-Record creation
+#1. Record_Name >> mongodb.nellore.online, frontend.nellore.online, catalogue.nellore.online
+#2. Record_Type >> A_Record
+#3. Value >> ip_address (Private_ip_address for communication among the components)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

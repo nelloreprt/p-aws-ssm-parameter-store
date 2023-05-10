@@ -1,0 +1,3 @@
+variable "parameter" {}
+
+variable "secret" {}

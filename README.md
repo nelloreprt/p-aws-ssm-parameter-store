@@ -1,1 +1,0 @@
-# p-aws-ssm-parameter-store
