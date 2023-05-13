@@ -14,7 +14,7 @@ resource "aws_ssm_parameter" "parameter" {
   key_id = "asdfa546s54654asdf65"
 }
 
-1.2 To Create/store Parameters---------------------------------------------------------------------------------------------
+1.2 To Create/store Parameters-----------------------------------------------------------------------------------------
 step-1 create a Key(symmetric/Asymmetric) in KMS(aws_Key_Management_Service) with any_name, we want the key_id
 # key_id is required to encrypt the parameter, so that amazon people cannot see it
 
@@ -26,7 +26,7 @@ resource "aws_ssm_parameter" "parameter" {
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-2.1 To read the stored parameters from aws_ssm_parameter, using ANSIBLE
+2.1 To read the stored parameters from aws_ssm_parameter, using ANSIBLE-----------------------------------------------
 syntax >> "{{ lookup('aws_ssm', '<parameter_name>', region='us-east-1' ) }}"
 
 eg:
@@ -34,7 +34,7 @@ eg:
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-3.1 DNS-Record creation
+3.1 DNS-Record creation----------------------------------------------------------------------------------------------
 #1. Record_Name >> mongodb.nellore.online, frontend.nellore.online, catalogue.nellore.online
 #2. Record_Type >> A_Record
 #3. Value >> ip_address (Private_ip_address for communication among the components)

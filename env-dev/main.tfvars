@@ -1,3 +1,4 @@
+# designed as LIST_type
 parameter = [
 # frontend_component_parameters
   { name = "dev.frontend.catalogue_url" , value = "http://catalogue-dev.nellore.online:8080/" },
