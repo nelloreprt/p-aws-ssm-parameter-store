@@ -46,6 +46,13 @@ E { name = "dev.shipping.db_user", value = "root" },
   #password >> { name = "dev.dispatch.amqp_pass" , value = "cart-dev.nellore.online:8080" },
 ]
 
+# docdb master_username
+  { name = "dev.docdb.master_username" , value = "roboshop" },
+
+# rds master_username
+{ name = "dev.rds.master_username" , value = "roboshop" },
+
+
 secret = [
 # shipping_component_secret
 E { name = "dev.shipping.db_pass", value = "RoboShop@1" }
@@ -56,4 +63,10 @@ E { name = "dev.shipping.db_pass", value = "RoboShop@1" }
 
 # dispatch_component_secret
   { name = "dev.dispatch.amqp_pass" , value = "roboshop123" },
+
+# docdb master_password
+{ name = "dev.docdb.master_password" , value = "RoboShop1" },
+
+# rds master_password
+{ name = "dev.rds.master_password" , value = "RoboShop1" },
 ]
